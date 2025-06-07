@@ -1,0 +1,33 @@
+﻿@model List<User>
+
+
+<h1>
+	User List
+</h1>
+
+<table class=" table table-bordered table-striped">
+	<thead class="table-dark">
+		<tr>
+			<td>
+				ID
+			</td>
+			<td>
+				UserName
+			</td>
+			<td>
+				Email
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var obj in Model.OrderBy(u => u.UserId))
+		{
+
+			<tr>
+				<td>@obj.UserId</td>
+				<td>@obj.UserName</td>
+				<td>@obj.Email</td>
+			</tr>
+		}
+	</tbody>
+</table>
