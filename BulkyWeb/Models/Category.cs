@@ -14,7 +14,7 @@ namespace BulkyWeb.Models
 		public string CategoryName { get; set; }
 
 		[DisplayName("Display Order")]
-		[Range(1,100, ErrorMessage ="Shen Debilo")]
+		[Range(1,100, ErrorMessage ="Input range is 1-100")]
 		public int DisplayOrder { get; set; }
 	}
 }

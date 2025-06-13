@@ -1,5 +1,10 @@
 ﻿@model List<Category>
 
+@if (TempData["success"] != null)
+{
+	<h2>@TempData["success"]</h2>
+}
+
 <div class="container">
 
 	<div class="container">
@@ -17,6 +22,10 @@
 		</div>
 	</div>
 
+	<hr style="border: 1px solid black;">
+
+
+
 	<table class=" table table-bordered table-striped">
 		<thead class="table-dark">
 			<tr>
@@ -29,6 +38,7 @@
 				<td>
 					DisplayOrder
 				</td>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,6 +50,14 @@
 					<td>@obj.CategoryId</td>
 					<td>@obj.CategoryName</td>
 					<td>@obj.DisplayOrder</td>
+					<td class="w-75 btn-group" role="group">
+						<a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.CategoryId" class="btn btn-primary mx-2">
+							<i class="bi bi-pencil-square"></i> Edit
+						</a>
+						<a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.CategoryId" class="btn btn-danger mx-2">
+							<i class="bi bi-trash-fill"></i> Delete
+						</a>
+					</td>
 				</tr>
 			}
 
